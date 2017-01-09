@@ -1,3 +1,6 @@
+/**
+ * Use a hash table to reduce the look up time from O(n) to O(1).
+ */ 
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
