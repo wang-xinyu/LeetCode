@@ -1,1 +1,1 @@
-My LeetCode Submissions
+My LeetCode Accepted Submissions
