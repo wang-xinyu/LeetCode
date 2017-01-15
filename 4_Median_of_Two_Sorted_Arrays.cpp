@@ -19,7 +19,8 @@ public:
             } else if (i < m && nums2[j-1] > nums1[i]) {  // i<m -> j>0
                 left = i + 1;
             } else {  // (i == 0 || j == n || nums1[i-1] <= nums2[j]) && (i == m || j == 0 || nums2[j-1] << nums1[i])
-                if (i == 0) {
+                // To save space, use left and right to store left_max_value and right_min_value
+		if (i == 0) {
                     left = nums2[j-1];
                 } else if (j == 0) {
                     left = nums1[i-1];
