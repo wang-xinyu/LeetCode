@@ -1,0 +1,28 @@
+/**
+ * Subsets
+ * Backtracking
+ */
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> ans;
+        vector<int> subset;
+        int n = nums.size();
+        for (int i = 0; i <= n; i++) {
+            subsets(ans, nums, subset, n, 0, i);
+        }
+        return ans;
+    }
+private:
+    void subsets(vector<vector<int>> &ans, vector<int> &nums, vector<int> &subset, int &n, int m, int k) {
+        if (k == 0) {
+            ans.push_back(subset);
+            return;
+        }
+        for (int i = m; i <= n-k; i++) {
+            subset.push_back(nums[i]);
+            subsets(ans, nums, subset, n, i+1, k-1);
+            subset.pop_back();
+        }
+    }
+};
